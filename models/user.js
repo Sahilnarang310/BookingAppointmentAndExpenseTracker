@@ -2,15 +2,14 @@ const Sequelize = require('sequelize');
 
 const sequelize = require('../util/database');
 
-const Appointment = sequelize.define('appointment', {
+const User = sequelize.define('User', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        unique: true,
         allowNull: false
     },
-    fullName: {
+    name: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -18,10 +17,10 @@ const Appointment = sequelize.define('appointment', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    phone: {
+    password: {
         type: Sequelize.STRING,
         allowNull: false
     }
-});
+})
 
-module.exports = Appointment;
+module.exports = User;
